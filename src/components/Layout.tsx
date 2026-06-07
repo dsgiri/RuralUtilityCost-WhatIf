@@ -44,6 +44,29 @@ export function Layout() {
         <Outlet />
       </main>
 
+      {/* Desktop Footer */}
+      <footer className="hidden sm:flex shrink-0 border-t border-gray-200 bg-white px-6 h-[40px] items-center justify-between text-[10px] text-gray-400 uppercase font-medium tracking-wider z-20">
+        <div>&copy; {new Date().getFullYear()} RuralUtility Cost Systems</div>
+        <div className="flex gap-6">
+          <a href="https://ruralutilitycost.com/about" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition-colors">About Us</a>
+          <a href="https://ruralutilitycost.com/contact" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition-colors">Contact Us</a>
+          <a href="https://ruralutilitycost.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition-colors">Privacy Policy</a>
+          <a href="https://ruralutilitycost.com/terms-of-use" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition-colors">Terms of Use</a>
+          <a href="https://ruralutilitycost.com/disclaimer" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition-colors">Disclaimer</a>
+        </div>
+      </footer>
+
+      {/* Mobile Footer Links - displayed in main scroll area but added here as a small text beneath outleto if needed. Actually, a hidden sm:flex is fine for global, let's also add it for mobile before nav */}
+      <div className="sm:hidden shrink-0 bg-gray-50 border-t border-gray-200 py-3 px-4 text-center">
+         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] text-gray-400 uppercase font-medium tracking-wider">
+          <a href="https://ruralutilitycost.com/about" target="_blank" rel="noopener noreferrer">About Us</a>
+          <a href="https://ruralutilitycost.com/contact" target="_blank" rel="noopener noreferrer">Contact</a>
+          <a href="https://ruralutilitycost.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <a href="https://ruralutilitycost.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms</a>
+          <a href="https://ruralutilitycost.com/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+         </div>
+      </div>
+
       {/* Mobile nav */}
       <nav className="sm:hidden shrink-0 bg-white border-t border-gray-200 z-50">
          <div className="flex justify-around px-2 py-2 pb-safe">
