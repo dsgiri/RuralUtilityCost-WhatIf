@@ -12,9 +12,11 @@ import { ToolDetailsPage } from './pages/ToolDetailsPage';
 
 function PlaceholderPage({ title }: { title: string }) {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-      <h1 className="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
-      <p className="text-gray-500">This section is currently under development.</p>
+    <div className="h-full w-full overflow-y-auto bg-gray-50 sm:bg-transparent flex flex-col items-center justify-center p-6">
+      <div className="bg-white p-8 rounded-xl border border-gray-200 text-center max-w-sm w-full shadow-sm">
+        <h1 className="text-xl font-bold text-gray-900 mb-2 uppercase tracking-wide">{title}</h1>
+        <p className="text-xs text-gray-500 font-medium tracking-wide">Module under development.</p>
+      </div>
     </div>
   );
 }

@@ -120,25 +120,25 @@ export function FertilizerRateCalculator() {
       <div className="bg-white p-6 rounded border border-gray-200 shadow-sm">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Scenario Outcomes</h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-           <div className="bg-gray-50 p-4 rounded text-center">
-              <div className="text-sm font-medium text-gray-500 mb-1">Cost Difference</div>
-              <div className={`text-2xl font-bold ${diffCost < 0 ? 'text-green-600' : diffCost > 0 ? 'text-red-600' : 'text-gray-900'}`}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-8">
+           <div className="bg-gray-50 p-3 sm:p-4 rounded text-center">
+              <div className="text-[10px] sm:text-sm font-bold uppercase tracking-wider text-gray-500 mb-1">Cost Diff</div>
+              <div className={`text-lg sm:text-2xl font-bold ${diffCost < 0 ? 'text-green-700' : diffCost > 0 ? 'text-red-600' : 'text-gray-900'}`}>
                 {diffCost > 0 ? '+' : ''}{formatCurrency(diffCost)}
               </div>
            </div>
-           <div className="bg-gray-50 p-4 rounded text-center">
-              <div className="text-sm font-medium text-gray-500 mb-1">Revenue Difference</div>
-              <div className={`text-2xl font-bold ${diffRevenue > 0 ? 'text-green-600' : diffRevenue < 0 ? 'text-red-600' : 'text-gray-900'}`}>
+           <div className="bg-gray-50 p-3 sm:p-4 rounded text-center">
+              <div className="text-[10px] sm:text-sm font-bold uppercase tracking-wider text-gray-500 mb-1">Rev Diff</div>
+              <div className={`text-lg sm:text-2xl font-bold ${diffRevenue > 0 ? 'text-green-700' : diffRevenue < 0 ? 'text-red-600' : 'text-gray-900'}`}>
                  {diffRevenue > 0 ? '+' : ''}{formatCurrency(diffRevenue)}
               </div>
            </div>
-           <div className={`p-4 rounded text-center border-2 ${diffMargin > 0 ? 'bg-green-50 border-green-200' : diffMargin < 0 ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
-              <div className="text-sm font-semibold text-gray-700 mb-1">Net Margin Impact</div>
-              <div className={`text-3xl font-extrabold ${diffMargin > 0 ? 'text-green-700' : diffMargin < 0 ? 'text-red-700' : 'text-gray-900'}`}>
+           <div className={`col-span-2 md:col-span-1 p-3 sm:p-4 rounded text-center border-2 ${diffMargin > 0 ? 'bg-green-50 border-green-200' : diffMargin < 0 ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
+              <div className="text-[10px] sm:text-sm font-bold uppercase tracking-wider text-gray-700 mb-1">Net Margin</div>
+              <div className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${diffMargin > 0 ? 'text-green-800' : diffMargin < 0 ? 'text-red-700' : 'text-gray-900'}`}>
                  {diffMargin > 0 ? '+' : ''}{formatCurrency(diffMargin)}
               </div>
-              <p className="text-xs mt-2 font-medium">
+              <p className="text-[10px] mt-1 font-semibold text-gray-600 hidden sm:block">
                 {diffMargin > 0 ? 'Scenario is more profitable.' : diffMargin < 0 ? 'Scenario is less profitable.' : 'Neutral outcome.'}
               </p>
            </div>

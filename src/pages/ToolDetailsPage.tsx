@@ -34,11 +34,12 @@ export function ToolDetailsPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-      <Link to="/" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 mb-6 transition-colors">
-        <ArrowLeft className="w-4 h-4 mr-1" />
-        Back to What-If Hub
-      </Link>
+    <div className="h-full w-full overflow-y-auto bg-gray-50 sm:bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
+        <Link to="/" className="inline-flex items-center text-[10px] uppercase font-bold text-green-800 hover:text-green-900 tracking-wider mb-6 transition-colors">
+          <ArrowLeft className="w-4 h-4 mr-1" />
+          Back to What-If Hub
+        </Link>
 
       <div className="bg-white rounded shadow-sm border border-gray-200 overflow-hidden mb-8">
         <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-6">
@@ -87,6 +88,7 @@ export function ToolDetailsPage() {
         </div>
       </div>
 
+    </div>
     </div>
   );
 }

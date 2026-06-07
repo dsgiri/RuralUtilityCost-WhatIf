@@ -11,11 +11,12 @@ export function FavoritesPage() {
   const favoriteTools = TOOLS.filter(tool => favorites.includes(tool.id));
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-      <div className="flex items-center space-x-3 mb-8">
-        <Heart className="w-8 h-8 text-red-500" fill="currentColor" />
-        <h1 className="text-3xl font-bold text-gray-900">My Favorites</h1>
-      </div>
+    <div className="h-full w-full overflow-y-auto bg-gray-50 sm:bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        <div className="flex items-center space-x-3 mb-6">
+          <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-green-900" strokeWidth={2} />
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">My Favorites</h1>
+        </div>
 
       {favoriteTools.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -38,6 +39,7 @@ export function FavoritesPage() {
           </Link>
         </div>
       )}
+    </div>
     </div>
   );
 }

@@ -29,12 +29,12 @@ export function HomePage() {
   const favoriteTools = TOOLS.filter(tool => favorites.includes(tool.id));
 
   return (
-    <div className="flex flex-col h-[calc(100vh-60px)]">
+    <div className="flex flex-col h-full w-full">
       {/* Header spanning all columns visually */}
-      <header className="border-b border-gray-200 bg-white px-8 py-6 flex flex-col md:flex-row md:items-center justify-between shrink-0 gap-4">
+      <header className="border-b border-gray-200 bg-white px-4 py-4 md:px-8 md:py-6 flex flex-col md:flex-row md:items-center justify-between shrink-0 gap-4">
         <div className="flex-1">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Scenario Comparison Hub</h1>
-          <p className="text-sm text-gray-500 max-w-2xl">
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">Scenario Comparison Hub</h1>
+          <p className="text-xs md:text-sm text-gray-500 max-w-2xl">
             Explore potential outcomes for your operation. Adjust inputs, compare risk, and find optimal utility paths.
           </p>
         </div>
@@ -42,7 +42,7 @@ export function HomePage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
             type="text"
-            placeholder="Search scenario tools..."
+            placeholder="Search scenarios..."
             className="w-full bg-gray-50 border border-gray-200 rounded-md py-2 pl-9 pr-3 text-sm focus:outline-none focus:border-green-900 transition-colors"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -81,12 +81,12 @@ export function HomePage() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 bg-gray-50 overflow-y-auto p-4 md:p-6 lg:p-8 relative">
+        <main className="flex-1 bg-gray-50 lg:bg-[#FDFCF8] overflow-y-auto p-4 md:p-6 lg:p-8 relative">
           {/* Mobile Categories - hidden on desktop where sidebar is visible */}
-          <div className="lg:hidden flex overflow-x-auto gap-2 pb-4 mb-4 border-b border-gray-200 scrollbar-hide">
+          <div className="lg:hidden flex flex-nowrap overflow-x-auto gap-2 pb-2 mb-4 scrollbar-hide shrink-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             <button
               onClick={() => setSelectedCategory('All')}
-              className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold ${selectedCategory === 'All' ? 'bg-green-900 text-white' : 'bg-white border border-gray-200 text-gray-600'}`}
+              className={`whitespace-nowrap px-3 py-1.5 rounded-full text-[11px] uppercase tracking-wider font-bold ${selectedCategory === 'All' ? 'bg-green-900 text-white' : 'bg-white border border-gray-200 text-gray-600'}`}
             >
               All Scenarios
             </button>
@@ -94,7 +94,7 @@ export function HomePage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold ${selectedCategory === cat ? 'bg-green-900 text-white' : 'bg-white border border-gray-200 text-gray-600'}`}
+                className={`whitespace-nowrap px-3 py-1.5 rounded-full text-[11px] uppercase tracking-wider font-bold ${selectedCategory === cat ? 'bg-green-900 text-white' : 'bg-white border border-gray-200 text-gray-600'}`}
               >
                 {cat}
               </button>
