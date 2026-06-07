@@ -1,0 +1,6 @@
+{
+  "name": "Rural Utility Cost - What If",
+  "description": "A scenario testing and comparison hub for rural and agricultural users.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
