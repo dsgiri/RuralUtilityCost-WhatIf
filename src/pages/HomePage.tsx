@@ -4,6 +4,7 @@ import { TOOLS } from '../data/tools';
 import { Category } from '../types';
 import { ToolCard } from '../components/ToolCard';
 import { useFavorites } from '../hooks/useFavorites';
+import { useSEO } from '../hooks/useSEO';
 
 const CATEGORIES: Category[] = [
   'Cost scenarios',
@@ -15,6 +16,11 @@ const CATEGORIES: Category[] = [
 ];
 
 export function HomePage() {
+  useSEO({
+    title: 'Scenario Hub | WhatIf Rural Utility',
+    description: 'A scenario testing and comparison hub built for farmers, ranchers, and rural property owners to test assumptions and compare outcomes.'
+  });
+
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
   const { favorites, toggleFavorite } = useFavorites();

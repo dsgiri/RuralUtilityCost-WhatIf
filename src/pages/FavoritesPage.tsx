@@ -4,8 +4,14 @@ import { TOOLS } from '../data/tools';
 import { ToolCard } from '../components/ToolCard';
 import { useFavorites } from '../hooks/useFavorites';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 export function FavoritesPage() {
+  useSEO({
+    title: 'My Favorites | WhatIf Rural Utility',
+    description: 'View your saved agricultural and rural utility "what if" scenarios.'
+  });
+
   const { favorites } = useFavorites();
 
   const favoriteTools = TOOLS.filter(tool => favorites.includes(tool.id));

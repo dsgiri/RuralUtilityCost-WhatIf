@@ -9,8 +9,14 @@ import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { ToolDetailsPage } from './pages/ToolDetailsPage';
+import { useSEO } from './hooks/useSEO';
 
 function PlaceholderPage({ title }: { title: string }) {
+  useSEO({
+    title: `${title} | WhatIf Rural Utility`,
+    description: `Access the ${title} module of the WhatIf Rural Utility platform.`
+  });
+
   return (
     <div className="h-full w-full overflow-y-auto bg-gray-50 sm:bg-transparent flex flex-col items-center justify-center p-6">
       <div className="bg-white p-8 rounded-xl border border-gray-200 text-center max-w-sm w-full shadow-sm">

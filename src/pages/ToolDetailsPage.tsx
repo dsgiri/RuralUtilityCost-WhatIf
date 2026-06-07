@@ -6,11 +6,17 @@ import { useFavorites } from '../hooks/useFavorites';
 import { cn } from '../lib/utils';
 import { FertilizerRateCalculator } from '../calculators/FertilizerRateCalculator';
 import { GenericCalculator } from '../calculators/GenericCalculator';
+import { useSEO } from '../hooks/useSEO';
 
 export function ToolDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const tool = TOOLS.find(t => t.id === id);
   const { isFavorite, toggleFavorite } = useFavorites();
+
+  useSEO({
+    title: tool ? `${tool.title} | WhatIf Rural Utility` : 'Tool Not Found | WhatIf Rural Utility',
+    description: tool ? tool.description : 'Scenario testing tool for agricultural and rural operations.'
+  });
 
   if (!tool) {
     return (
